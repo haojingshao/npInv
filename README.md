@@ -21,3 +21,6 @@ optional:
 				 --max[int] maximum size of inversion. Default[10000]
 				 For example: java -jar npInv.jar --input sample.bam --output sample.VCF
 ```
+
+# Contact
+Email: uqhshao@uq.edu.au or haojingshao@gmail.com
