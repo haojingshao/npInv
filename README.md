@@ -23,4 +23,4 @@ optional:
 ```
 
 # Contact
-Email: uqhshao@uq.edu.au or haojingshao@gmail.com
+Email: uqhshao at uq.edu.au or haojingshao at gmail.com
