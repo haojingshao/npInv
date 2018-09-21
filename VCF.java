@@ -36,7 +36,7 @@ public class VCF {
 		header+="##fileformat=VCFv4.2\n";
 //		header+="##fileDate="+dtf.format(now)+"\n";
 		header+="##arguments:"+String.join(" ",args)+"\n";
-		header+="##method: LRInv"+Main.version+"\n";
+		header+="##method: npInv"+Main.version+"\n";
 		header+="##ALT=<ID=INV,Description=\"Inversion\">\n";
 		//header+="##ALT=<ID=MMEJ,Description=\"Micro-homology end joining\">\n";
 		header+="##FILTER=<ID=Ref,Description=\"Genotype is reference\">\n";
