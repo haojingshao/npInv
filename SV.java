@@ -123,23 +123,26 @@ public class SV implements Comparable<SV> {
 			return out;
 		}
 	}
-	public static int compareChr(String a,String b){		
-		String[] a1=a.split("(?=\\d)(?<!\\d)");
-		String[] b1=b.split("(?=\\d)(?<!\\d)");
-		if(!a1[0].equals(b1[0])){
-			return a.compareTo(b);
-		}else{
-			if(a1.length==2 && b1.length==2){
-				try{
-					return Integer.parseInt(a1[1])-Integer.parseInt(b1[1]);
-				}catch(NumberFormatException e){
-					return a.compareTo(b);
-				}
-			}else{
-				return a.compareTo(b);
-			}
-		}
+	public static int compareChr(String a,String b){	
+		return a.compareTo(b);
 	}
+//	public static int compareChr(String a,String b){		
+//		String[] a1=a.split("(?=\\d)(?<!\\d)");
+//		String[] b1=b.split("(?=\\d)(?<!\\d)");
+//		if(!a1[0].equals(b1[0])){
+//			return a.compareTo(b);
+//		}else{
+//			if(a1.length==2 && b1.length==2){
+//				try{
+//					return Integer.parseInt(a1[1])-Integer.parseInt(b1[1]);
+//				}catch(NumberFormatException e){
+//					return a.compareTo(b);
+//				}
+//			}else{
+//				return a.compareTo(b);
+//			}
+//		}
+//	}
 	public String toString(){
 		String info="CHR2="+this.chr2+";END="+this.start2+";HOMO="+this.homo+";orientation="+this.orientation+";";
 		String out=this.chr+"\t"+this.start1+" \t"+0+"\tREF\t"+this.type+"\tQUAL\tFILTER\t"+info+"\tGT\tNA\n";

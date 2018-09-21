@@ -48,7 +48,7 @@ public class Main {
 	public final static int clipSize=5;
 	public static int mergedClipRead=10;
 	public static double variantRate=0.01;
-	public static double version=1.2;
+	public static double version=1.21;
 	public static final int mergedSize=2000;//sv merged size
 	public static int minimumClipRead=3;//short clip read record>=3
 	//end of global setting
@@ -65,6 +65,7 @@ public class Main {
 	public static void main(String[] args) throws IOException{
 		getArgs tmp=new getArgs(args);
 		tmp.addUsage("Program function: Read a SE bam file and get the inversion\n");
+		tmp.addUsage("Version:\t"+version+"\n");
 		tmp.addUsage("--output[String] file to write\n");
 		tmp.addUsage("--input[String] file to read\n");
 		tmp.addUsage("optional:\n");
@@ -124,7 +125,7 @@ public class Main {
 		if(region.equals("all")){
 			for(int i=0;i<allChr.size();i++){
 				now = LocalDateTime.now();
-				System.out.println("#<INFO-3> Running chromosome "+allChr.get(i)+" at"+dtf.format(now));
+				System.out.println("#<INFO-3> Running chromosome "+allChr.get(i)+" at "+dtf.format(now));
 				runChr(allChr.get(i),shortBam,inputType,input,ir,args,writer);
 			}
 		}else{
