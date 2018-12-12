@@ -48,7 +48,7 @@ public class Main {
 	public final static int clipSize=5;
 	public static int mergedClipRead=10;
 	public static double variantRate=0.01;
-	public static double version=1.21;
+	public static double version=1.22;
 	public static final int mergedSize=2000;//sv merged size
 	public static int minimumClipRead=3;//short clip read record>=3
 	//end of global setting
