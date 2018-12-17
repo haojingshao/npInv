@@ -120,6 +120,7 @@ public class Main {
 		while(iter2.hasNext()){
 			allChr.add(iter2.next().getSequenceName());
 		}
+		VCF.createHeader(args,allChr);
 		samReader.close();
 		//testModule();
 		if(region.equals("all")){
