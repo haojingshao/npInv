@@ -44,13 +44,14 @@ public class Main {
 	public static int minAln;
 	public static int min;
 	public static int max;
+	public static int threshold;
 	public static int gq;
 	public final static int clipSize=5;
 	public static int mergedClipRead=10;
 	public static double variantRate=0.01;
-	public static double version=1.22;
-	public static final int mergedSize=2000;//sv merged size
-	public static int minimumClipRead=3;//short clip read record>=3
+	public static double version=1.23;
+	public static int mergedSize;//sv merged size
+	public static int minimumClipRead;//short clip read record>=3
 	//end of global setting
 	//for all candidate long sv signal
 	//no more global data!
@@ -74,8 +75,10 @@ public class Main {
 		tmp.addUsage("--minAln[int] minimum size for Alignment & Inv. Default[500]\n");
 		tmp.addUsage("--IRdatabase[String] An inverted repeat file for the reference in bed format. Default[none]\n");
 		//tmp.addUsage("--shortBam[String] An short bam file for the same sample to the same reference. Default[none]\n");
-		tmp.addUsage("--min[int] minimum size of inversion. Default[500]\n");
-		tmp.addUsage("--max[int] maximum size of inversion. Default[10000]\n");
+		tmp.addUsage("--min[int] minimum size of an inversion. Default[500]\n");
+		tmp.addUsage("--max[int] maximum size of an inversion. Default[10000]\n");
+		tmp.addUsage("--window[int] minimun window size (bp) to merge inversion breakpoints. Default[2000]\n");
+		tmp.addUsage("--threshold[int] minimum number of supporting reads for an inversion. Default[3]\n");
 		tmp.addUsage("For example: java -jar npInv.jar --input sample.bam --output sample.VCF\n");
 		String output=tmp.getString("output", true, "output");
 		String inputType=tmp.getString("inputType", false, "bam");
@@ -94,6 +97,8 @@ public class Main {
 		minAln=tmp.getInt("minAln", false, dms);
 		min=tmp.getInt("min", false, 500);//change from 2000 to 500
 		max=tmp.getInt("max", false, 1000000);
+		mergedSize=tmp.getInt("window", false, 2000);
+		minimumClipRead=tmp.getInt("minimumClipRead", false, 3);
 		gq=5;//genotype quality
 		FileWriter writer=new FileWriter(output);
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
