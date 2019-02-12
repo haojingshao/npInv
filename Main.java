@@ -49,7 +49,7 @@ public class Main {
 	public final static int clipSize=5;
 	public static int mergedClipRead=10;
 	public static double variantRate=0.01;
-	public static double version=1.23;
+	public static double version=1.24;
 	public static int mergedSize;//sv merged size
 	public static int minimumClipRead;//short clip read record>=3
 	//end of global setting
@@ -79,13 +79,19 @@ public class Main {
 		tmp.addUsage("--max[int] maximum size of an inversion. Default[10000]\n");
 		tmp.addUsage("--window[int] minimun window size (bp) to merge inversion breakpoints. Default[2000]\n");
 		tmp.addUsage("--threshold[int] minimum number of supporting reads for an inversion. Default[3]\n");
+		tmp.addUsage("--help Show usage\n");
 		tmp.addUsage("For example: java -jar npInv.jar --input sample.bam --output sample.VCF\n");
+		if(tmp.help){
+			System.err.println(tmp.cmd);
+			System.exit(0);
+		}
 		String output=tmp.getString("output", true, "output");
 		String inputType=tmp.getString("inputType", false, "bam");
 		String input=tmp.getString("input", true, "xx");
 		String region=tmp.getString("region", false, "all");
 		String ir=tmp.getString("IRdatabase", false, "none");
 		String shortBam=tmp.getString("shortBam", false, "none");
+
 		int dms = 0;
 		if(inputType.equals("bam")){
 			dms=500;
@@ -149,6 +155,7 @@ public class Main {
 		writer.close();
 		now = LocalDateTime.now();
 		System.out.println("#<INFO-0> Program finishs at "+dtf.format(now));
+		System.exit(0);
 	}
 	private static void testModule() {
 		// TODO Auto-generated method stub

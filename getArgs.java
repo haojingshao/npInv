@@ -12,12 +12,18 @@ public class getArgs {
 	}
 */
 	public static Hashtable<String, String> StringHash= new Hashtable<String, String>();
-	public static String cmd="";
+	public String cmd="";
+	public boolean help=false;
 	public getArgs(String[] args){
 		//parse args[i] to args[i+1] end at legnth-1
 		for (int i=0;i<args.length-1;i++){
 			if(args[i].length()>2 && args[i].substring(0,2).equals("--")){
 				StringHash.put(args[i].substring(2), args[i+1]);
+			}
+		}
+		for (int i=0;i<args.length;i++){
+			if(args[i].equals("--help")){
+				help=true;
 			}
 		}
 	}
@@ -85,5 +91,13 @@ public class getArgs {
 				return a;
 			}
 		}	
+	}
+	public Boolean getString(String key) {
+		// TODO Auto-generated method stub
+		if (StringHash.containsKey(key)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
