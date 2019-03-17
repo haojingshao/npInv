@@ -40,12 +40,12 @@ public class VCF {
 		}
 		header+="##ALT=<ID=INV,Description=\"Inversion\">\n";
 		//header+="##ALT=<ID=MMEJ,Description=\"Micro-homology end joining\">\n";
-		header+="##INFO=<ID=Ref,Description=\"Genotype is reference\">\n";
-		header+="##INFO=<ID=Single,Description=\"Inversion supporting read only from single side or from single strand\">\n";
-		header+="##INFO=<ID=LowGQ,Description=\"Genotype quality < 20\">\n";
-		header+="##INFO=<ID=Long,Description=\"Inversion size is longer than expected(Default:1M)\">\n";
-		header+="##INFO=<ID=Short,Description=\"Inversion size is shorter than expected(Default:2k)\">\n";
-		header+="##INFO=<ID=PASS,Description=\"High quality result\">\n";	
+		header+="##FILTER=<ID=Ref,Description=\"Genotype is reference\">\n";
+		header+="##FILTER=<ID=Single,Description=\"Inversion supporting read only from single side or from single strand\">\n";
+		header+="##FILTER=<ID=LowGQ,Description=\"Genotype quality < 20\">\n";
+		header+="##FILTER=<ID=Long,Description=\"Inversion size is longer than expected(Default:1M)\">\n";
+		header+="##FILTER=<ID=Short,Description=\"Inversion size is shorter than expected(Default:2k)\">\n";
+		header+="##FILTER=<ID=PASS,Description=\"High quality result\">\n";	
 		header+="##INFO=<ID=END,Number=1,Type=Integer,Description=\"Average end position of the inversion\">\n";
 		header+="##INFO=<ID=IR,Number=1,Type=Integer,Description=\"Size of inverted repeat\">\n";
 		header+="##INFO=<ID=MH,Number=1,Type=Integer,Description=\"Size of micro-homology\">\n";
