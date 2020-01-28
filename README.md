@@ -7,6 +7,8 @@ Download the runnable jar such as npInv1.2.jar.
 # Requirement
 Java version 1.8+.
 
+The input bam file requires field "MD:Z:". Expected aligner are bwa, minimap2 and ngmlr.
+
 # Usage
 ```
 Program function: Read a SE bam file and get the inversion
